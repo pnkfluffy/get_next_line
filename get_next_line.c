@@ -6,7 +6,7 @@
 /*   By: jfelty <jfelty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/20 16:24:35 by jfelty            #+#    #+#             */
-/*   Updated: 2019/09/08 16:28:27 by jfelty           ###   ########.fr       */
+/*   Updated: 2019/09/08 18:18:33 by jfelty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	get_next_line(int const fd, char **line)
 			ft_strdel(&tmp);
 		}
 		if (ret < 0)
-			return (1);
+			return (-1);
 	}
 	return (ft_gnl(str, line, fd));
 }
