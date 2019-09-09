@@ -6,11 +6,18 @@
 /*   By: jfelty <jfelty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/20 16:24:35 by jfelty            #+#    #+#             */
-/*   Updated: 2019/09/08 18:18:33 by jfelty           ###   ########.fr       */
+/*   Updated: 2019/09/09 10:48:53 by jfelty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+/*
+**	makes a new pointer variable and points it to the next new line character.
+**	the characters in between are then passed into line using ft_strsub. then
+**	the rest of the string is copied back into the str[fd] variable. 1 is
+**	returned if a new line can be read, and 0 if End of File has been reached.
+*/
 
 int	ft_gnl(char **str, char **line, int fd)
 {
@@ -33,6 +40,14 @@ int	ft_gnl(char **str, char **line, int fd)
 	ft_strdel(&tmp);
 	return (1);
 }
+
+/*
+**	the variable static char *str[MAX_FD] is a multidimensional array which
+**	contains a string all possible file descriptors. when a new file descriptor
+**	is opened, the if (str[fd] = NULL) condition is validated and the while
+**	loop populates the str variable. these variables are then passed into
+**	ft_gnl, which parses the string by '\n' characters.
+*/
 
 int	get_next_line(int const fd, char **line)
 {
